@@ -6,7 +6,7 @@
 src/
   |- app/
   |  |- home/
-  |  |- about/
+  |  |- desk/
   |  |- app.js
   |  |- app.spec.js
 ```
@@ -22,7 +22,7 @@ route `/products`, though this is in no way enforced. Products may then have
 subdirectories for "create", "view", "search", etc. The "view" submodule may
 then define a route of `/products/:id`, ad infinitum.
 
-As `ngBoilerplate` is quite minimal, take a look at the two provided submodules
+As `jsb` is quite minimal, take a look at the two provided submodules
 to gain a better understanding of how these are used as well as to get a
 glimpse of how powerful this simple construct can be.
 
@@ -42,11 +42,10 @@ submodules that need them to ensure proper dependency handling. These are
 app-wide dependencies that are required to assemble your app.
 
 ```js
-angular.module( 'ngBoilerplate', [
+angular.module( 'jsb', [
   'templates-app',
   'templates-common',
-  'ngBoilerplate.home',
-  'ngBoilerplate.about'
+  'jsb.home',
   'ui.router',
   'ui.route'
 ])
@@ -80,7 +79,7 @@ not specific to the template or route, such as menu logic or page title wiring.
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
+      $scope.pageTitle = toState.data.pageTitle + ' | jsb' ;
     }
   });
 })
@@ -88,7 +87,7 @@ not specific to the template or route, such as menu logic or page title wiring.
 
 ### Testing
 
-One of the design philosophies of `ngBoilerplate` is that tests should exist
+One of the design philosophies of `jsb` is that tests should exist
 alongside the code they test and that the build system should be smart enough to
 know the difference and react accordingly. As such, the unit test for `app.js`
 is `app.spec.js`, though it is quite minimal.

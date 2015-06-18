@@ -8,7 +8,6 @@ tests of such code.
 ```
 src/
   |- app/
-  |  |- about/
   |  |- home/
   |  |- app.js
   |  |- app.spec.js
@@ -37,7 +36,7 @@ See each directory for a detailed explanation.
 
 The `index.html` file is the HTML document of the single-page application (SPA)
 that should contain all markup that applies to everything in the app, such as
-the header and footer. It declares with `ngApp` that this is `ngBoilerplate`,
+the header and footer. It declares with `ngApp` that this is `jsb`,
 specifies the main `AppCtrl` controller, and contains the `ngView` directive
 into which route templates are placed.
 
