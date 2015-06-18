@@ -18,6 +18,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.loadNpmTasks('grunt-html2js');
+  grunt.loadNpmTasks('grunt-angular-templates');
 
   /**
    * Load in our build configuration file.
@@ -199,6 +200,14 @@ module.exports = function ( grunt ) {
           'module.suffix' 
         ],
         dest: '<%= compile_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.js'
+      }
+    },
+
+    ngtemplates:  {
+      app:        {
+        cwd:      'src/app',
+        src:      'templates/**.html',
+        dest:     'build/app.templates.js'
       }
     },
 
@@ -568,7 +577,7 @@ module.exports = function ( grunt ) {
    * The `build` task gets your app ready to run for development and testing.
    */
   grunt.registerTask( 'build', [
-    'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
+    'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'ngtemplates', 'less:build',
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
     'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss', 'index:build', 'karmaconfig',
     'karma:continuous' 
