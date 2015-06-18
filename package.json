@@ -15,6 +15,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
+    "grunt-angular-templates": "^0.5.7",
     "grunt-bump": "0.0.6",
     "grunt-coffeelint": "~0.0.10",
     "grunt-contrib-clean": "^0.4.1",
