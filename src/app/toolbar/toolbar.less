@@ -1,0 +1,31 @@
+@import '../../less/variables.less';
+
+.toolbar {
+	.tools-container {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			display: inline-block;
+			background-color: @toolbar-background;
+			border-radius: 5px;
+			overflow: hidden;
+
+		#crane-btn {
+			background: no-repeat url(icons/tower-crane-btn.svg);
+		}
+		#road-btn {
+			background: no-repeat url(icons/road-btn.svg);
+		}
+		#powerline-btn {
+			background: no-repeat url(icons/powerline-btn.svg);
+		}
+		#buildings-btn {
+			background: no-repeat url(icons/buildings-btn.svg);
+		}
+		.tool-item {
+			height: 25px;
+			width: 25px;
+			margin: 10px 5px 10px 5px;
+		}
+	}
+}

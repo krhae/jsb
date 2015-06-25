@@ -18,7 +18,19 @@
      * Set up the desktop canvas for use
      * 
      */
-    $scope.onLoad = function() {
-        
+    $scope.start = function() {
+      // Retreive the canvas element
+      var canvas = new fabric.Canvas('desktop');
+
+      var rect = new fabric.Rect({
+        left: 1,
+        top: 1,
+        fill: 'red',
+        width: 20,
+        height: 20
+      });
+
+      canvas.add(rect);
+
     };
 });
